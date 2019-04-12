@@ -7,7 +7,7 @@ namespace People.Library
 {
     public class PersonRepository
     {
-        public Person[] GetPeople()
+        public List<Person> GetPeople()
         {
             var people = new List<Person>()
             {
@@ -31,7 +31,7 @@ namespace People.Library
                 new Person() { Id=9, GivenName="Isaac", FamilyName="Gampu",
                     StartDate = new DateTime(1977, 9, 10), Rating=4 },
             };
-            return people.ToArray();
+            return people;
         }
 
         public Person GetPerson(int id)
