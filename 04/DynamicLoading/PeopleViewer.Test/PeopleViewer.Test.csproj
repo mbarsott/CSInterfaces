@@ -11,11 +11,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PeopleViewer.Test</RootNamespace>
     <AssemblyName>PeopleViewer.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\PeopleViewer.Layered\PeopleViewer.Layered.csproj">
       <Project>{113c3648-8220-4227-8bc8-8003bfe5022a}</Project>
       <Name>PeopleViewer.Layered</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.Fake\PersonRepository.Fake.csproj">
+      <Project>{39119243-e39a-43dd-bbb6-48306e5d67f9}</Project>
+      <Name>PersonRepository.Fake</Name>
     </ProjectReference>
     <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
       <Project>{97b4a8a4-2354-4ce7-8bff-435a1406e97e}</Project>
