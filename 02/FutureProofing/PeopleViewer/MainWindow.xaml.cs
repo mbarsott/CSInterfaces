@@ -19,20 +19,12 @@ namespace PeopleViewer
         {
             List<Person> people = repository.GetPeople();
             PersonListBox.ItemsSource = people;
-//            foreach (var person in people)
-//            {
-//                PersonListBox.Items.Add(person);
-//            }
         }
 
         private void AbstractFetchButton_Click(object sender, RoutedEventArgs e)
         {
             IEnumerable<Person> people = repository.GetPeople();
             PersonListBox.ItemsSource = people;
-//            foreach (var person in people)
-//            {
-//                PersonListBox.Items.Add(person);
-//            }
         }
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
@@ -43,7 +35,6 @@ namespace PeopleViewer
         private void ClearListBox()
         {
             PersonListBox.ItemsSource = null;
-//            PersonListBox.Items.Clear();
         }
     }
 }
