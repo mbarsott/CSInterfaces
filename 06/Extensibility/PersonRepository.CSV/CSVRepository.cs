@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace PersonRepository.CSV
 {
-    public class CSVRepository : IPersonRepository
+    public class CSVRepository : IPersonReader
     {
         string path;
 
@@ -26,7 +26,7 @@ namespace PersonRepository.CSV
                 using (var reader = new StreamReader(path))
                 {
                     string line;
-                    while((line = reader.ReadLine()) != null)
+                    while ((line = reader.ReadLine()) != null)
                     {
                         var elements = line.Split(',');
                         var person = new Person()

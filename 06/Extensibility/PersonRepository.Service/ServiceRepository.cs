@@ -6,7 +6,7 @@ using System.Net;
 
 namespace PersonRepository.Service
 {
-    public class ServiceRepository : IPersonRepository
+    public class ServiceRepository : IPersonReader
     {
         WebClient client = new WebClient();
         string baseUri = "http://localhost:9874/api/people";
@@ -21,23 +21,6 @@ namespace PersonRepository.Service
         public Person GetPerson(int id)
         {
             return GetPeople().FirstOrDefault(p => p.Id == id);
-        }
-
-        public void AddPerson(Person newPerson)
-        {
-            string data = JsonConvert.SerializeObject(newPerson);
-            client.UploadString(baseUri, "PUT", data);
-        }
-
-        public void DeletePerson(int id)
-        {
-            client.UploadString(baseUri + $"/{id}", "DELETE", string.Empty);
-        }
-
-        public void UpdatePerson(int id, Person updatedPerson)
-        {
-            string data = JsonConvert.SerializeObject(updatedPerson);
-            client.UploadString(baseUri + $"/{id}", "POST", data);
         }
     }
 }

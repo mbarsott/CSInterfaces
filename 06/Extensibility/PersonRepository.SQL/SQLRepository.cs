@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PersonRepository.Interface;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace PersonRepository.SQL
 {
-    public class SQLRepository : IPersonRepository
+    public class SQLRepository : IPersonReader
     {
         DbContextOptions<PersonContext> options;
 

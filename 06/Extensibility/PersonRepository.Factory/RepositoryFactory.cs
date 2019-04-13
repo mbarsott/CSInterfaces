@@ -8,17 +8,20 @@ namespace PersonRepository.Factory
 {
     public static class RepositoryFactory
     {
-        public static IPersonRepository GetRepository(string repositoryType)
+        public static IPersonReader GetRepository(string repositoryType)
         {
-            IPersonRepository repository = null;
+            IPersonReader repository = null;
 
             switch (repositoryType)
             {
-                case "Service": repository = new ServiceRepository();
+                case "Service":
+                    repository = new ServiceRepository();
                     break;
-                case "CSV": repository = new CSVRepository();
+                case "CSV":
+                    repository = new CSVRepository();
                     break;
-                case "SQL": repository = new SQLRepository();
+                case "SQL":
+                    repository = new SQLRepository();
                     break;
                 default:
                     throw new ArgumentException("Invalid repository type");

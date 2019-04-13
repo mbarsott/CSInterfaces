@@ -30,10 +30,12 @@ namespace PeopleViewer
         {
             ClearListBox();
 
-            IPersonRepository repository = RepositoryFactory.GetRepository(repositoryType);
+            IPersonReader repository = RepositoryFactory.GetRepository(repositoryType);
             var people = repository.GetPeople();
             foreach (var person in people)
+            {
                 PersonListBox.Items.Add(person);
+            }
 
             ShowRepositoryType(repository);
         }
@@ -49,7 +51,7 @@ namespace PeopleViewer
             RepositoryTypeTextBlock.Text = string.Empty;
         }
 
-        private void ShowRepositoryType(IPersonRepository repository)
+        private void ShowRepositoryType(IPersonReader repository)
         {
             RepositoryTypeTextBlock.Text = repository.GetType().ToString();
         }
