@@ -1,8 +1,6 @@
 ﻿using Common;
 using Ninject;
-using PersonRepository.Caching;
 using PersonRepository.CSV;
-using PersonRepository.Service;
 using System.Windows;
 
 namespace PeopleViewer.Ninject
@@ -15,7 +13,8 @@ namespace PeopleViewer.Ninject
         {
             base.OnStartup(e);
 
-            Container.Bind<IPersonRepository>().To<ServiceRepository>();
+            //            Container.Bind<IPersonRepository>().To<ServiceRepository>();
+            Container.Bind<IPersonRepository>().To<CSVRepository>();
             Application.Current.MainWindow = Container.Get<MainWindow>();
 
             Application.Current.MainWindow.Show();

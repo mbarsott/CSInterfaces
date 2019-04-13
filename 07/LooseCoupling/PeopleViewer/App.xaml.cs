@@ -1,6 +1,5 @@
 ﻿using PeopleViewer.Presentation;
 using PersonRepository.Caching;
-using PersonRepository.CSV;
 using PersonRepository.Service;
 using System.Windows;
 
@@ -12,7 +11,12 @@ namespace PeopleViewer
         {
             base.OnStartup(e);
 
-            // Application.Current.MainWindow = 
+            //            var repository = new ServiceRepository();
+            //            var repository = new CSVRepository();
+            var wrappedRepository = new ServiceRepository();
+            var repository = new CachingRepository(wrappedRepository);
+            var viewModel = new PeopleViewModel(repository);
+            Application.Current.MainWindow = new MainWindow(viewModel);
 
             Application.Current.MainWindow.Show();
         }
